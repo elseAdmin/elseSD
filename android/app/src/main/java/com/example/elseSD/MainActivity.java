@@ -208,6 +208,7 @@ public class MainActivity extends FlutterFragmentActivity implements GoogleApiCl
     private synchronized void buildGoogleApiClient() {
         if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addApi(Nearby.MESSAGES_API)
                     .addConnectionCallbacks(this)
                     .enableAutoManage(this, this)
                     .build();
